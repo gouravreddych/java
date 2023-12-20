@@ -42,7 +42,8 @@ pipeline {
 
     post {
         always {
-            // Clean up workspace or perform other tasks, if needed
+            // Actions to be performed always, even if a stage fails
+            echo 'Jenkins pipeline completed'
         }
     }
 }
