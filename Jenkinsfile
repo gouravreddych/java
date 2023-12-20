@@ -34,8 +34,8 @@ pipeline {
                 // Assuming you have a target server where you want to deploy the application
                 // Replace 'your_server_username', 'your_server_ip', and '/path/to/deploy' with actual values
                 // For simplicity, we'll use SSH to copy the JAR file to the server
-                sh "ssh ${ec2-user}@${54.224.72.108} 'mkdir -p ${/home/ec2-user/}'"
-                sh "scp target/hello-world.jar ${ec2-user}@${54.224.72.108}:${/home/ec2-user/}"
+                sh "ssh ${SERVER_USERNAME}@${SERVER_IP} 'mkdir -p ${DEPLOY_PATH}'"
+                sh "scp target/hello-world.jar ${SERVER_USERNAME}@${SERVER_IP}:${DEPLOY_PATH}"
             }
         }
     }
@@ -46,4 +46,3 @@ pipeline {
         }
     }
 }
-
